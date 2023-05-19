@@ -27,10 +27,6 @@ jobs:
           base_indepth: yes
           repositories_affiliations: owner,collaborator,organization_member
           plugin_fortune: yes
-          plugin_discussions: yes
-          plugin_followup: yes
-          plugin_gists: yes
-          plugin_introduction: yes
           plugin_isocalendar: yes
           plugin_isocalendar_duration: full-year
           plugin_languages: yes
@@ -44,8 +40,6 @@ jobs:
           plugin_people_identicons: yes
           plugin_people_types: sponsoring
           plugin_skyline: yes
-          plugin_sponsors: yes
-          plugin_sponsors_past: yes
           plugin_starlists: yes
           plugin_stars: yes
           plugin_topics: yes
