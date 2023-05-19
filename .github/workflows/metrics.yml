@@ -24,6 +24,7 @@ jobs:
           config_output: svg
           plugin_activity: yes
           plugin_activity_visibility: public
+          base: header
           base_indepth: yes
           repositories_affiliations: owner,collaborator,organization_member
           plugin_fortune: yes
