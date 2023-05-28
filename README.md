@@ -1,6 +1,6 @@
 ### HI 🥳
 
-I am a front-end beginner, and current main direction for the front-end development, welcome to learn together to exchange.
+My current main area of interest is front-end development, welcome to learn together to exchange.
 
 ---
 
