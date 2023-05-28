@@ -1,16 +1,6 @@
-# HI 🥳
+### HI 🥳
 
-I am [Liting](https://www.liting.ink/), a front-end beginner
+I am a front-end beginner, and current main direction for the front-end development, welcome to learn together to exchange.
 
-<table>
-  <tbody align="center">
-    <tr>
-      <td width="50%" style="border:none;">
-        <img src="https://github-readme-stats.vercel.app/api?username=liting-yes&count_private=true&show_icons=true&theme=calm" />
-      </td>
-      <td width="50%" style="border:none;">
-        <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=liting-yes&theme=calm&layout=compact" />
-      </td>
-    </tr>
-  </tbody>
-</table>
+<img align="left" width="56%" src="https://liting-ghreadme.vercel.app/api?username=liting-yes&count_private=true&show_icons=true&theme=calm" />
+<img align="right" width="42.4%" src="https://liting-ghreadme.vercel.app/api/top-langs/?username=liting-yes&theme=calm&layout=compact" />
