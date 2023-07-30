@@ -11,13 +11,16 @@
     "format": "eslint . --fix --ignore-path .gitignore",
     "prepare": "husky install"
   },
+  "dependencies": {
+    "@astrojs/sitemap": "^2.0.1",
+    "astro": "^2.9.6"
+  },
   "devDependencies": {
     "@antfu/eslint-config-basic": "^0.39.8",
     "@iconify/json": "^2.2.95",
     "@typescript-eslint/parser": "^6.2.0",
     "@unocss/eslint-config": "^0.54.0",
     "@unocss/reset": "^0.54.0",
-    "astro": "^2.9.6",
     "eslint": "^8.46.0",
     "eslint-plugin-astro": "^0.28.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
