@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ['@antfu/eslint-config-basic', 'plugin:astro/recommended'],
+  extends: ['@antfu/eslint-config-basic', 'plugin:jsx-a11y/recommended', 'plugin:astro/recommended'],
   overrides: [
     {
       files: ['*.astro'],
