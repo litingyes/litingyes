@@ -6,9 +6,16 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "eslint . --ignore-path .gitignore",
+    "format": "eslint . --fix --ignore-path .gitignore"
   },
   "devDependencies": {
-    "astro": "^2.9.6"
+    "@antfu/eslint-config-basic": "^0.39.8",
+    "@typescript-eslint/parser": "^6.2.0",
+    "astro": "^2.9.6",
+    "eslint": "^8.46.0",
+    "eslint-plugin-astro": "^0.28.0",
+    "eslint-plugin-jsx-a11y": "^6.7.1"
   }
 }
