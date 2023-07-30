@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config'
 import UnoCSS from 'unocss/astro'
 import sitemap from '@astrojs/sitemap'
+import image from '@astrojs/image'
 
 export default defineConfig({
   site: 'https://liting.ink',
@@ -9,5 +10,8 @@ export default defineConfig({
       injectReset: true,
     }),
     sitemap(),
+    image({
+      serviceEntryPoint: '@astrojs/image/sharp',
+    }),
   ],
 })
