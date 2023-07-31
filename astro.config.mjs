@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config'
 import UnoCSS from 'unocss/astro'
 import sitemap from '@astrojs/sitemap'
 import image from '@astrojs/image'
+import vercel from '@astrojs/vercel/serverless'
 
 export default defineConfig({
   site: 'https://liting.ink',
@@ -14,4 +15,6 @@ export default defineConfig({
       serviceEntryPoint: '@astrojs/image/sharp',
     }),
   ],
+  output: 'server',
+  adapter: vercel(),
 })
