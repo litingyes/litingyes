@@ -37,6 +37,9 @@ devDependencies:
   '@unocss/reset':
     specifier: ^0.54.0
     version: 0.54.0
+  '@unocss/transformer-variant-group':
+    specifier: ^0.54.1
+    version: 0.54.1
   eslint:
     specifier: ^8.46.0
     version: 8.46.0
@@ -1337,6 +1340,10 @@ packages:
     resolution: {integrity: sha512-iHfJJ8U+pVhMrbVpzMb0GImZUJu3Xmp165Q5Qr44hGOEzcMdvdBxbMSSl2VBKjRsEuNudNVhh7XJAyUcKxnSWg==}
     dev: true
 
+  /@unocss/core@0.54.1:
+    resolution: {integrity: sha512-lbwvGD91liMNEZs3jwXxLrIHIn/J4dkJpeKdosRdm1xObqrkg0+Zx1fVn6X+GOX74yvjQlzbu/ODZEXFQC3mGw==}
+    dev: true
+
   /@unocss/eslint-config@0.54.0(eslint@8.46.0)(typescript@5.1.6):
     resolution: {integrity: sha512-4z7F9ytVU87qPOKsdjz1oQpPJuGuw62VumRUK0bWL3kU6rS1w6pZ6bO9u1Y97ojvKgZdHAtM9QvNp2XQF8H9EQ==}
     engines: {node: '>=14'}
@@ -1485,6 +1492,12 @@ packages:
     resolution: {integrity: sha512-qwviBwjBKhbXYK0T1wNuM3weY+RJbmrWmKqWTldXAuZDf0q06KAa4jQC8FF1YXhq5/Z6tn2MW2GFPVWd/8nPHQ==}
     dependencies:
       '@unocss/core': 0.54.0
+    dev: true
+
+  /@unocss/transformer-variant-group@0.54.1:
+    resolution: {integrity: sha512-vWHYGmXA5BtVjKmBRxUmr0MumT081ixiGNFiHFIbIwTcnaRklehtTKCWWg0J5mxLe3G20oCPg5a52R4IdJGE2g==}
+    dependencies:
+      '@unocss/core': 0.54.1
     dev: true
 
   /@unocss/vite@0.54.0(vite@4.4.7):
