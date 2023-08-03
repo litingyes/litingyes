@@ -1,6 +1,11 @@
 {
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
-    "types": ["@astrojs/image/client"]
+    "types": ["@astrojs/image/client"],
+    "lib": ["DOM", "ESNext"],
+    "paths": {
+      "@/utils/*": ["src/utils/*"]
+    },
+    "verbatimModuleSyntax": true
   }
 }

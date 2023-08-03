@@ -19,7 +19,7 @@
     "sharp": "^0.32.4"
   },
   "devDependencies": {
-    "@antfu/eslint-config-basic": "^0.39.8",
+    "@antfu/eslint-config-ts": "^0.40.0",
     "@iconify/json": "^2.2.95",
     "@typescript-eslint/parser": "^6.2.0",
     "@unocss/eslint-config": "^0.54.0",
@@ -33,6 +33,6 @@
     "unocss": "^0.54.0"
   },
   "lint-staged": {
-    "*": "npx eslint . --fix --ignore-path .gitignore"
+    "*.{astro,ts,json,cjs,md}": "npx eslint . --fix --ignore-path .gitignore"
   }
 }

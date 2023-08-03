@@ -23,7 +23,7 @@ export default defineConfig({
       },
     }),
   ],
-  // @ts-ignore
+  // @ts-expect-error Type 'RegExp' is not assignable to type 'string'
   transformers: [transformerVariantGroup()],
   shortcuts: {
     'u-center': 'flex justify-center items-center',
