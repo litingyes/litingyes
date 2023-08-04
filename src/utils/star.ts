@@ -16,7 +16,10 @@ export class Star {
   backgroundColor: string
   text: string
   customClass: string
-  customStyle: Partial<CSSStyleDeclaration>
+  customStyle: Partial<CSSStyleDeclaration> = {
+    zIndex: '-1',
+  }
+
   speed: number
   customData: Record<string, any>
 
@@ -29,7 +32,7 @@ export class Star {
     this.backgroundColor = options?.backgroundColor ?? 'transparent'
     this.text = options?.text ?? ''
     this.customClass = options.customClass ?? 'star'
-    this.customStyle = options.customStyle ?? {}
+    this.customStyle = Object.assign(this.customStyle, options?.customStyle)
     this.speed = options.speed ?? 0
     this.customData = options.customData ?? {}
     this.update()
