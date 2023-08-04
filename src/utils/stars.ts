@@ -177,7 +177,7 @@ export class Stars {
             case 'BOTTOM': {
               let top = Number.parseFloat(star.element.style.top)
               top = top + star.speed * 100
-              if (top > 0) {
+              if (top > 100) {
                 top = 0
                 const left = this.initLeft()
                 const size = this.initSize()
@@ -193,7 +193,7 @@ export class Stars {
             case 'LEFT': {
               let left = Number.parseFloat(star.element.style.left)
               left = left - star.speed * 100
-              if (left <= 0) {
+              if (left < 0) {
                 left = 100
                 const top = this.initTop()
                 const size = this.initSize()
@@ -209,7 +209,7 @@ export class Stars {
             case 'RIGHT': {
               let left = Number.parseFloat(star.element.style.left)
               left = left + star.speed * 100
-              if (left >= 100) {
+              if (left > 100) {
                 left = 0
                 const top = this.initTop()
                 const size = this.initSize()
