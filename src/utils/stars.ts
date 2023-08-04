@@ -1,7 +1,7 @@
 import type { StarOptions } from './star'
 import { Star } from './star'
 
-interface StarsOptions {
+export interface StarsOptions {
   container: HTMLElement
   count?: number
   speed?: number

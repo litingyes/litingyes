@@ -16,7 +16,7 @@ dependencies:
     version: 3.7.4(astro@2.9.6)(react@18.2.0)
   astro:
     specifier: ^2.9.6
-    version: 2.9.6(sharp@0.32.4)
+    version: 2.9.6(sass@1.64.2)(sharp@0.32.4)
   sharp:
     specifier: ^0.32.4
     version: 0.32.4
@@ -55,6 +55,9 @@ devDependencies:
   lint-staged:
     specifier: ^13.2.3
     version: 13.2.3
+  sass:
+    specifier: ^1.64.2
+    version: 1.64.2
   unocss:
     specifier: ^0.54.0
     version: 0.54.0(postcss@8.4.27)(vite@4.4.7)
@@ -149,7 +152,7 @@ packages:
         optional: true
     dependencies:
       '@altano/tiny-async-pool': 1.0.2
-      astro: 2.9.6(sharp@0.32.4)
+      astro: 2.9.6(sass@1.64.2)(sharp@0.32.4)
       http-cache-semantics: 4.1.1
       image-size: 1.0.2
       kleur: 4.1.5
@@ -187,7 +190,7 @@ packages:
       astro: ^2.5.0
     dependencies:
       '@astrojs/prism': 2.1.2
-      astro: 2.9.6(sharp@0.32.4)
+      astro: 2.9.6(sass@1.64.2)(sharp@0.32.4)
       github-slugger: 1.5.0
       import-meta-resolve: 2.2.2
       rehype-raw: 6.1.1
@@ -243,7 +246,7 @@ packages:
       '@astrojs/webapi': 2.2.0
       '@vercel/analytics': 0.1.11(react@18.2.0)
       '@vercel/nft': 0.22.6
-      astro: 2.9.6(sharp@0.32.4)
+      astro: 2.9.6(sass@1.64.2)(sharp@0.32.4)
       esbuild: 0.17.19
       fast-glob: 3.3.1
       set-cookie-parser: 2.6.0
@@ -1645,7 +1648,7 @@ packages:
       chokidar: 3.5.3
       fast-glob: 3.3.1
       magic-string: 0.30.2
-      vite: 4.4.7
+      vite: 4.4.7(sass@1.64.2)
     transitivePeerDependencies:
       - rollup
     dev: true
@@ -1899,7 +1902,7 @@ packages:
       - supports-color
     dev: true
 
-  /astro@2.9.6(sharp@0.32.4):
+  /astro@2.9.6(sass@1.64.2)(sharp@0.32.4):
     resolution: {integrity: sha512-yvbZQ6YOWYLejyQ4nAcgZLDYQ34enQJ5/LWlXKtUzXzpsUHB75vJMj+XmEq5Q2eVlZOlQrp0lU+nhSRGaOsOUQ==}
     engines: {node: '>=16.12.0', npm: '>=6.14.0'}
     hasBin: true
@@ -1963,7 +1966,7 @@ packages:
       typescript: 5.1.6
       unist-util-visit: 4.1.2
       vfile: 5.3.7
-      vite: 4.4.7
+      vite: 4.4.7(sass@1.64.2)
       vitefu: 0.2.4(vite@4.4.7)
       which-pm: 2.0.0
       yargs-parser: 21.1.1
@@ -3673,6 +3676,9 @@ packages:
     dependencies:
       queue: 6.0.2
     dev: false
+
+  /immutable@4.3.2:
+    resolution: {integrity: sha512-oGXzbEDem9OOpDWZu88jGiYCvIsLHMvGw+8OXlpsvTFvIQplQbjg1B1cvKg8f7Hoch6+NGjpPsH1Fr+Mc2D1aA==}
 
   /import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==}
@@ -5513,6 +5519,15 @@ packages:
       suf-log: 2.5.3
     dev: false
 
+  /sass@1.64.2:
+    resolution: {integrity: sha512-TnDlfc+CRnUAgLO9D8cQLFu/GIjJIzJCGkE7o4ekIGQOH7T3GetiRR/PsTWJUHhkzcSPrARkPI+gNWn5alCzDg==}
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: 3.5.3
+      immutable: 4.3.2
+      source-map-js: 1.0.2
+
   /sax@1.2.4:
     resolution: {integrity: sha512-NqVDv9TpANUjFm0N8uM5GxL36UgKi9/atZw+x7YFnQ8ckwFGKrl4xX4yWtrey3UJm5nP1kUbnYgLopqWNSRhWw==}
     dev: false
@@ -6277,7 +6292,7 @@ packages:
       vfile-message: 3.1.4
     dev: false
 
-  /vite@4.4.7:
+  /vite@4.4.7(sass@1.64.2):
     resolution: {integrity: sha512-6pYf9QJ1mHylfVh39HpuSfMPojPSKVxZvnclX1K1FyZ1PXDOcLBibdq5t1qxJSnL63ca8Wf4zts6mD8u8oc9Fw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -6308,6 +6323,7 @@ packages:
       esbuild: 0.18.17
       postcss: 8.4.27
       rollup: 3.27.0
+      sass: 1.64.2
     optionalDependencies:
       fsevents: 2.3.2
 
@@ -6319,7 +6335,7 @@ packages:
       vite:
         optional: true
     dependencies:
-      vite: 4.4.7
+      vite: 4.4.7(sass@1.64.2)
     dev: false
 
   /vscode-css-languageservice@6.2.6:

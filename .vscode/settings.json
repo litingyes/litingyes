@@ -3,5 +3,5 @@
     "source.fixAll": false,
     "source.fixAll.eslint": true
   },
-  "eslint.validate": ["astro", "json"]
+  "eslint.validate": ["astro", "json", "typescript", "typescriptreact"]
 }

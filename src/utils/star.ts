@@ -5,8 +5,8 @@ export interface StarOptions {
   text?: string
   customClass?: string
   customStyle?: Partial<CSSStyleDeclaration>
-
   speed?: number
+  customData?: Record<string, any>
 }
 
 export class Star {
@@ -18,6 +18,7 @@ export class Star {
   customClass: string
   customStyle: Partial<CSSStyleDeclaration>
   speed: number
+  customData: Record<string, any>
 
   constructor(options: StarOptions) {
     this.element = document?.createElement('div')
@@ -30,6 +31,7 @@ export class Star {
     this.customClass = options.customClass ?? 'star'
     this.customStyle = options.customStyle ?? {}
     this.speed = options.speed ?? 0
+    this.customData = options.customData ?? {}
     this.update()
   }
 

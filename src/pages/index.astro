@@ -70,26 +70,32 @@
       <div id="right" class="lg:w-1/2"></div>
     </main>
     <script src="../utils/init.ts"></script>
-    <style>
+    <style lang="scss">
       main {
         width: 100vw;
         height: 100vh;
-      }
 
-      #left {
-        padding: 5vh 10vw;
+        #left {
+          padding: 5vh 10vw;
 
-        @media (min-width: 768px) {
-          padding-right: 24px;
+          @media (min-width: 768px) {
+            padding-right: 24px;
+          }
+        }
+
+        #right {
+          padding: 5vh 10vw;
+
+          @media (min-width: 768px) {
+            padding-left: 24px;
+          }
         }
       }
+    </style>
 
-      #right {
-        padding: 5vh 10vw;
-
-        @media (min-width: 768px) {
-          padding-left: 24px;
-        }
+    <style is:global>
+      .bubble-item {
+        border: 1px solid #94a3b8;
       }
     </style>
   </body>
