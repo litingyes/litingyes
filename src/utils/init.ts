@@ -1,9 +1,9 @@
 import { Stars } from './stars'
 import { Bubbles } from './bubbles'
 
-const containerLeft = document.getElementById('left')
+const containerStars = document.getElementById('stars')
 const stars = new Stars({
-  container: containerLeft!,
+  container: containerStars!,
   speed: 0.001,
   direction: 'TB',
   starOptions: {

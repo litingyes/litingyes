@@ -11,12 +11,13 @@
   </head>
   <body>
     <main class="bg-slate-50 font-merienda text-slate-900 md:(flex)">
-      <div id="left" class="h-screen text-xl lg:w-1/2">
-        <h1 class="mt-16 text-6xl font-black">Hello.</h1>
-        <p class="my-4">My name is <em class="font-bold">Luz Liu</em> and my github alias is <em class="font-bold">Liting</em></p>
-        <p class="my-4">I'm from China and I'm currently working at zoom as a R&D engineer.(Hefei, Anhui, China)</p>
-        <p class="my-4">I am currently learning and using :</p>
-        <ul class="grid grid-cols-8 list-none gap-y-1 pl-0 md:grid-cols-12 xl:grid-cols-16">
+      <div class="left relative h-screen text-xl lg:w-1/2">
+        <div id="stars" class="absolute inset-0"></div>
+        <h1 class="relative z-1 mt-16 text-6xl font-black">Hello.</h1>
+        <p class="relative z-1 my-4">My name is <em class="font-bold">Luz Liu</em> and my github alias is <em class="font-bold">Liting</em></p>
+        <p class="relative z-1 my-4">I'm from China and I'm currently working at zoom as a R&D engineer.(Hefei, Anhui, China)</p>
+        <p class="relative z-1 my-4">I am currently learning and using :</p>
+        <ul class="relative z-1 grid grid-cols-8 list-none gap-y-1 pl-0 md:grid-cols-12 xl:grid-cols-16">
           <li class="u-center">
             <a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank"><i class="i-logos:html-5"></i></a>
           </li>
@@ -75,7 +76,7 @@
         width: 100vw;
         height: 100vh;
 
-        #left {
+        .left {
           padding: 5vh 10vw;
 
           @media (min-width: 768px) {
