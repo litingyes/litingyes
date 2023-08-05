@@ -82,7 +82,7 @@ export class Bubbles extends Stars {
       const size = this.initSize(label)
       const speed = this.initSpeed(size)
 
-      const customStyle = { left, top, fontSize: '12px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center', ...this.starOptions.customStyle } as Partial<CSSStyleDeclaration>
+      const customStyle = { left, top, fontSize: '12px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: '100', ...this.starOptions.customStyle } as Partial<CSSStyleDeclaration>
       const star = new Star({ width: `${size}px`, height: `${size}px`, text: label.text, speed, ...this.starOptions, customStyle, customData: { fixed: false } })
       star.element.setAttribute('title', label.text)
       star.element.addEventListener('mouseenter', () => {
