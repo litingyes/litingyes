@@ -69,13 +69,13 @@ export class Bubbles extends Stars {
       left = this.initLeft()
       top = this.initTop()
       if (this.speed !== 0) {
-        if (this.direction === 'TOP')
+        if (this.direction === 'BT')
           top = '100%'
 
-        else if (this.direction === 'BOTTOM')
+        else if (this.direction === 'TB')
           top = `-${size}%`
 
-        else if (this.direction === 'LEFT')
+        else if (this.direction === 'RL')
           left = `-${size}%`
 
         else
@@ -112,7 +112,7 @@ export class Bubbles extends Stars {
           const size = Number.parseInt(star.width)
 
           switch (this.direction) {
-            case 'TOP': {
+            case 'BT': {
               let top = Number.parseFloat(star.element.style.top)
               top = top - star.speed * 100
 
@@ -128,7 +128,7 @@ export class Bubbles extends Stars {
               break
             }
 
-            case 'BOTTOM': {
+            case 'TB': {
               let top = Number.parseFloat(star.element.style.top)
               top = top + star.speed * 100
 
@@ -144,7 +144,7 @@ export class Bubbles extends Stars {
               break
             }
 
-            case 'LEFT': {
+            case 'RL': {
               let left = Number.parseFloat(star.element.style.left)
               left = left - star.speed * 100
 
@@ -160,7 +160,7 @@ export class Bubbles extends Stars {
               break
             }
 
-            case 'RIGHT': {
+            case 'LR': {
               let left = Number.parseFloat(star.element.style.left)
               left = left + star.speed * 100
 

@@ -5,7 +5,7 @@ export interface StarsOptions {
   container: HTMLElement
   count?: number
   speed?: number
-  direction?: 'TOP' | 'BOTTOM' | 'LEFT' | 'RIGHT'
+  direction?: 'BT' | 'TB' | 'RL' | 'LR'
   position?: {
     horizontal?: [number, number]
     vertical?: [number, number]
@@ -18,7 +18,7 @@ export class Stars {
   container: HTMLElement
   count: number
   speed: number
-  direction: 'TOP' | 'BOTTOM' | 'LEFT' | 'RIGHT'
+  direction: 'BT' | 'TB' | 'RL' | 'LR'
   position: {
     horizontal: [number, number]
     vertical: [number, number]
@@ -33,7 +33,7 @@ export class Stars {
     this.container = options.container
     this.count = options?.count ?? 10
     this.speed = options?.speed ?? 0
-    this.direction = options?.direction ?? 'TOP'
+    this.direction = options?.direction ?? 'BT'
     this.position = {
       horizontal: options.position?.horizontal ?? [0, 1],
       vertical: options.position?.vertical ?? [0, 1],
@@ -71,13 +71,13 @@ export class Stars {
       left = this.initLeft()
       top = this.initTop()
       if (this.speed !== 0) {
-        if (this.direction === 'TOP')
+        if (this.direction === 'BT')
           top = '100%'
 
-        else if (this.direction === 'BOTTOM')
+        else if (this.direction === 'TB')
           top = '0%'
 
-        else if (this.direction === 'LEFT')
+        else if (this.direction === 'RL')
           left = '0%'
 
         else
@@ -164,7 +164,7 @@ export class Stars {
           const size = Number.parseInt(star.width)
 
           switch (this.direction) {
-            case 'TOP': {
+            case 'BT': {
               let top = Number.parseFloat(star.element.style.top)
               top = top - star.speed * 100
 
@@ -181,7 +181,7 @@ export class Stars {
               break
             }
 
-            case 'BOTTOM': {
+            case 'TB': {
               let top = Number.parseFloat(star.element.style.top)
               top = top + star.speed * 100
 
@@ -198,7 +198,7 @@ export class Stars {
               break
             }
 
-            case 'LEFT': {
+            case 'RL': {
               let left = Number.parseFloat(star.element.style.left)
               left = left - star.speed * 100
 
@@ -215,7 +215,7 @@ export class Stars {
               break
             }
 
-            case 'RIGHT': {
+            case 'LR': {
               let left = Number.parseFloat(star.element.style.left)
               left = left + star.speed * 100
               if (left > 100) {

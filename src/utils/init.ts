@@ -5,7 +5,7 @@ const containerLeft = document.getElementById('left')
 const stars = new Stars({
   container: containerLeft!,
   speed: 0.001,
-  direction: 'BOTTOM',
+  direction: 'TB',
   starOptions: {
     backgroundColor: '#94a3b8',
     customStyle: {
