@@ -156,12 +156,19 @@ export class Stars {
       return
     this.intervalID = setInterval(() => {
       requestAnimationFrame(() => {
+        const containerStyle = getComputedStyle(this.container)
+        const containerWidth = Number.parseInt(containerStyle.width)
+        const containerHeight = Number.parseInt(containerStyle.height)
+
         this.stars.forEach((star) => {
+          const size = Number.parseInt(star.width)
+
           switch (this.direction) {
             case 'TOP': {
               let top = Number.parseFloat(star.element.style.top)
               top = top - star.speed * 100
-              if (top < 0) {
+
+              if ((top / 100) < -(size / containerHeight)) {
                 top = 100
                 const left = this.initLeft()
                 const size = this.initSize()
@@ -177,6 +184,7 @@ export class Stars {
             case 'BOTTOM': {
               let top = Number.parseFloat(star.element.style.top)
               top = top + star.speed * 100
+
               if (top > 100) {
                 top = 0
                 const left = this.initLeft()
@@ -193,7 +201,8 @@ export class Stars {
             case 'LEFT': {
               let left = Number.parseFloat(star.element.style.left)
               left = left - star.speed * 100
-              if (left < 0) {
+
+              if ((left / 100) < -(size / containerWidth)) {
                 left = 100
                 const top = this.initTop()
                 const size = this.initSize()

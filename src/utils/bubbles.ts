@@ -61,6 +61,9 @@ export class Bubbles extends Stars {
 
   initStars() {
     this.labels.forEach((label) => {
+      const size = this.initSize(label)
+      const speed = this.initSpeed(size)
+
       let left = ''
       let top = ''
       left = this.initLeft()
@@ -70,17 +73,14 @@ export class Bubbles extends Stars {
           top = '100%'
 
         else if (this.direction === 'BOTTOM')
-          top = '0%'
+          top = `-${size}%`
 
         else if (this.direction === 'LEFT')
-          left = '0%'
+          left = `-${size}%`
 
         else
           left = '100%'
       }
-
-      const size = this.initSize(label)
-      const speed = this.initSpeed(size)
 
       const customStyle = { left, top, fontSize: '12px', overflow: 'hidden', display: 'flex', justifyContent: 'center', alignItems: 'center', zIndex: '100', ...this.starOptions.customStyle } as Partial<CSSStyleDeclaration>
       const star = new Star({ width: `${size}px`, height: `${size}px`, text: label.text, speed, ...this.starOptions, customStyle, customData: { fixed: false } })
@@ -101,17 +101,24 @@ export class Bubbles extends Stars {
       return
     this.intervalID = setInterval(() => {
       requestAnimationFrame(() => {
+        const containerStyle = getComputedStyle(this.container)
+        const containerWidth = Number.parseInt(containerStyle.width)
+        const containerHeight = Number.parseInt(containerStyle.height)
+
         this.stars.forEach((star) => {
           if (star.customData?.fixed)
             return
+
+          const size = Number.parseInt(star.width)
+
           switch (this.direction) {
             case 'TOP': {
               let top = Number.parseFloat(star.element.style.top)
               top = top - star.speed * 100
-              if (top < 0) {
+
+              if ((top / 100) < -(size / containerHeight)) {
                 top = 100
                 const left = this.initLeft()
-                const size = Number.parseInt(star.width)
                 const speed = this.initSpeed(size)
                 star.updateOptions({ speed, customStyle: { top: `${top}%`, left } })
               }
@@ -124,10 +131,10 @@ export class Bubbles extends Stars {
             case 'BOTTOM': {
               let top = Number.parseFloat(star.element.style.top)
               top = top + star.speed * 100
-              if (top > 0) {
-                top = 0
+
+              if (top > 100) {
+                top = -(size / containerHeight)
                 const left = this.initLeft()
-                const size = Number.parseInt(star.width)
                 const speed = this.initSpeed(size)
                 star.updateOptions({ width: `${size}px`, height: `${size}px`, speed, customStyle: { top: `${top}%`, left } })
               }
@@ -140,11 +147,11 @@ export class Bubbles extends Stars {
             case 'LEFT': {
               let left = Number.parseFloat(star.element.style.left)
               left = left - star.speed * 100
-              if (left <= 0) {
-                left = 100
+
+              if ((left / 100) < -(size / containerWidth)) {
                 const top = this.initTop()
-                const size = Number.parseInt(star.width)
                 const speed = this.initSpeed(size)
+                left = 100
                 star.updateOptions({ width: `${size}px`, height: `${size}px`, speed, customStyle: { left: `${left}%`, top } })
               }
               else {
@@ -156,10 +163,10 @@ export class Bubbles extends Stars {
             case 'RIGHT': {
               let left = Number.parseFloat(star.element.style.left)
               left = left + star.speed * 100
-              if (left >= 100) {
-                left = 0
+
+              if (left > 100) {
+                left = -(size / containerWidth)
                 const top = this.initTop()
-                const size = Number.parseInt(star.width)
                 const speed = this.initSpeed(size)
                 star.updateOptions({ width: `${size}px`, height: `${size}px`, speed, customStyle: { left: `${left}%`, top } })
               }
