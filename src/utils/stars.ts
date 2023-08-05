@@ -7,8 +7,8 @@ export interface StarsOptions {
   speed?: number
   direction?: 'TOP' | 'BOTTOM' | 'LEFT' | 'RIGHT'
   position?: {
-    horizontal: [number, number]
-    vertical: [number, number]
+    horizontal?: [number, number]
+    vertical?: [number, number]
   }
   starSizeRange?: [number, number]
   starOptions?: StarOptions
@@ -34,9 +34,9 @@ export class Stars {
     this.count = options?.count ?? 10
     this.speed = options?.speed ?? 0
     this.direction = options?.direction ?? 'TOP'
-    this.position = options?.position ?? {
-      horizontal: [0, 1],
-      vertical: [0, 1],
+    this.position = {
+      horizontal: options.position?.horizontal ?? [0, 1],
+      vertical: options.position?.vertical ?? [0, 1],
     }
     this.starSizeRange = options.starSizeRange ?? [2, 6]
     this.starOptions = options.starOptions ?? {}

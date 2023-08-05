@@ -27,18 +27,25 @@ const bubbles = new Bubbles({
     },
     customClass: 'bubble-item',
   },
+  position: {
+    horizontal: [0.05, 0.95],
+  },
   labels: [
     {
       text: '脱单',
-      priority: 10,
-    },
-    {
-      text: '暴富',
-      priority: 8,
+      priority: 100,
     },
     {
       text: '健康',
-      priority: 6,
+      priority: 90,
+    },
+    {
+      text: '学习',
+      priority: 80,
+    },
+    {
+      text: '暴富',
+      priority: 70,
     },
   ],
 })
