@@ -27,5 +27,6 @@ export default defineConfig({
   transformers: [transformerVariantGroup()],
   shortcuts: {
     'u-center': 'flex justify-center items-center',
+    'u-link': 'transition-colors text-blue-500 hover:text-blue-600 hover:underline hover:decoration-blue-600',
   },
 })
