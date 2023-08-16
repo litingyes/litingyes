@@ -1,6 +1,8 @@
 ### HI 🥳
 
-My current main area of interest is front-end development, welcome to learn together to exchange.
+My current main area of interest is front-end development
+
+00 后前端/后端/产品/设计 QQ 交流群：882904753
 
 ---
 
