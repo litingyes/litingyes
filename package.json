@@ -21,13 +21,13 @@
     "@nuxt/image": "^2.0.0",
     "@nuxt/ui": "^4.3.0",
     "@vueuse/nuxt": "^14.1.0",
-    "better-sqlite3": "^12.5.0",
     "motion-v": "^1.7.3",
     "nuxt": "^4.2.2",
     "nuxt-og-image": "^5.1.13"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^6.7.3",
+    "@iconify-json/logos": "^1.2.10",
     "@nuxt/eslint": "^1.12.1",
     "eslint": "^9.39.2",
     "husky": "^9.1.7",

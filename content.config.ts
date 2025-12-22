@@ -37,13 +37,6 @@ function createAuthorSchema() {
   })
 }
 
-function createTestimonialSchema() {
-  return z.object({
-    quote: z.string(),
-    author: createAuthorSchema(),
-  })
-}
-
 export default defineContentConfig({
   collections: {
     index: defineCollection({
@@ -67,7 +60,6 @@ export default defineContentConfig({
             }),
           })),
         }),
-        testimonials: z.array(createTestimonialSchema()),
         blog: createBaseSchema(),
         faq: createBaseSchema().extend({
           categories: z.array(
