@@ -6,17 +6,16 @@ if (!page.value) {
   throw createError({
     statusCode: 404,
     statusMessage: 'Page not found',
-    fatal: true
+    fatal: true,
   })
 }
 const { data: posts } = await useAsyncData('blogs', () =>
-  queryCollection('blog').order('date', 'DESC').all()
-)
+  queryCollection('blog').order('date', 'DESC').all())
 if (!posts.value) {
   throw createError({
     statusCode: 404,
     statusMessage: 'blogs posts not found',
-    fatal: true
+    fatal: true,
   })
 }
 
@@ -24,7 +23,7 @@ useSeoMeta({
   title: page.value?.seo?.title || page.value?.title,
   ogTitle: page.value?.seo?.title || page.value?.title,
   description: page.value?.seo?.description || page.value?.description,
-  ogDescription: page.value?.seo?.description || page.value?.description
+  ogDescription: page.value?.seo?.description || page.value?.description,
 })
 </script>
 
@@ -37,12 +36,12 @@ useSeoMeta({
       :ui="{
         title: '!mx-0 text-left',
         description: '!mx-0 text-left',
-        links: 'justify-start'
+        links: 'justify-start',
       }"
     />
     <UPageSection
       :ui="{
-        container: '!pt-0'
+        container: '!pt-0',
       }"
     >
       <UBlogPosts orientation="vertical">
@@ -66,7 +65,7 @@ useSeoMeta({
               header:
                 index % 2 === 0
                   ? 'sm:-rotate-1 overflow-visible'
-                  : 'sm:rotate-1 overflow-visible'
+                  : 'sm:rotate-1 overflow-visible',
             }"
           />
         </Motion>

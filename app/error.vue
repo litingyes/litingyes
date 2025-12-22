@@ -4,37 +4,37 @@ import type { NuxtError } from '#app'
 defineProps({
   error: {
     type: Object as PropType<NuxtError>,
-    required: true
-  }
+    required: true,
+  },
 })
 
 useHead({
   htmlAttrs: {
-    lang: 'en'
-  }
+    lang: 'en',
+  },
 })
 
 useSeoMeta({
   title: 'Page not found',
-  description: 'We are sorry but this page could not be found.'
+  description: 'We are sorry but this page could not be found.',
 })
 
 const [{ data: navigation }, { data: files }] = await Promise.all([
   useAsyncData('navigation', () => {
     return Promise.all([
-      queryCollectionNavigation('blog')
+      queryCollectionNavigation('blog'),
     ])
   }, {
-    transform: data => data.flat()
+    transform: data => data.flat(),
   }),
   useLazyAsyncData('search', () => {
     return Promise.all([
-      queryCollectionSearchSections('blog')
+      queryCollectionSearchSections('blog'),
     ])
   }, {
     server: false,
-    transform: data => data.flat()
-  })
+    transform: data => data.flat(),
+  }),
 ])
 </script>
 

@@ -1,38 +1,48 @@
 import { defineCollection, defineContentConfig, z } from '@nuxt/content'
 
-const createBaseSchema = () => z.object({
-  title: z.string(),
-  description: z.string()
-})
+function createBaseSchema() {
+  return z.object({
+    title: z.string(),
+    description: z.string(),
+  })
+}
 
-const createButtonSchema = () => z.object({
-  label: z.string(),
-  icon: z.string().optional(),
-  to: z.string().optional(),
-  color: z.enum(['primary', 'neutral', 'success', 'warning', 'error', 'info']).optional(),
-  size: z.enum(['xs', 'sm', 'md', 'lg', 'xl']).optional(),
-  variant: z.enum(['solid', 'outline', 'subtle', 'soft', 'ghost', 'link']).optional(),
-  target: z.enum(['_blank', '_self']).optional()
-})
+function createButtonSchema() {
+  return z.object({
+    label: z.string(),
+    icon: z.string().optional(),
+    to: z.string().optional(),
+    color: z.enum(['primary', 'neutral', 'success', 'warning', 'error', 'info']).optional(),
+    size: z.enum(['xs', 'sm', 'md', 'lg', 'xl']).optional(),
+    variant: z.enum(['solid', 'outline', 'subtle', 'soft', 'ghost', 'link']).optional(),
+    target: z.enum(['_blank', '_self']).optional(),
+  })
+}
 
-const createImageSchema = () => z.object({
-  src: z.string().editor({ input: 'media' }),
-  alt: z.string()
-})
+function createImageSchema() {
+  return z.object({
+    src: z.string().editor({ input: 'media' }),
+    alt: z.string(),
+  })
+}
 
-const createAuthorSchema = () => z.object({
-  name: z.string(),
-  description: z.string().optional(),
-  username: z.string().optional(),
-  twitter: z.string().optional(),
-  to: z.string().optional(),
-  avatar: createImageSchema().optional()
-})
+function createAuthorSchema() {
+  return z.object({
+    name: z.string(),
+    description: z.string().optional(),
+    username: z.string().optional(),
+    twitter: z.string().optional(),
+    to: z.string().optional(),
+    avatar: createImageSchema().optional(),
+  })
+}
 
-const createTestimonialSchema = () => z.object({
-  quote: z.string(),
-  author: createAuthorSchema()
-})
+function createTestimonialSchema() {
+  return z.object({
+    quote: z.string(),
+    author: createAuthorSchema(),
+  })
+}
 
 export default defineContentConfig({
   collections: {
@@ -42,7 +52,7 @@ export default defineContentConfig({
       schema: z.object({
         hero: z.object({
           links: z.array(createButtonSchema()),
-          images: z.array(createImageSchema())
+          images: z.array(createImageSchema()),
         }),
         about: createBaseSchema(),
         experience: createBaseSchema().extend({
@@ -53,9 +63,9 @@ export default defineContentConfig({
               name: z.string(),
               url: z.string(),
               logo: z.string().editor({ input: 'icon' }),
-              color: z.string()
-            })
-          }))
+              color: z.string(),
+            }),
+          })),
         }),
         testimonials: z.array(createTestimonialSchema()),
         blog: createBaseSchema(),
@@ -66,12 +76,13 @@ export default defineContentConfig({
               questions: z.array(
                 z.object({
                   label: z.string().nonempty(),
-                  content: z.string().nonempty()
-                })
-              )
-            }))
-        })
-      })
+                  content: z.string().nonempty(),
+                }),
+              ),
+            }),
+          ),
+        }),
+      }),
     }),
     projects: defineCollection({
       type: 'data',
@@ -82,8 +93,8 @@ export default defineContentConfig({
         image: z.string().nonempty().editor({ input: 'media' }),
         url: z.string().nonempty(),
         tags: z.array(z.string()),
-        date: z.date()
-      })
+        date: z.date(),
+      }),
     }),
     blog: defineCollection({
       type: 'page',
@@ -92,18 +103,18 @@ export default defineContentConfig({
         minRead: z.number(),
         date: z.date(),
         image: z.string().nonempty().editor({ input: 'media' }),
-        author: createAuthorSchema()
-      })
+        author: createAuthorSchema(),
+      }),
     }),
     pages: defineCollection({
       type: 'page',
       source: [
         { include: 'projects.yml' },
-        { include: 'blog.yml' }
+        { include: 'blog.yml' },
       ],
       schema: z.object({
-        links: z.array(createButtonSchema())
-      })
+        links: z.array(createButtonSchema()),
+      }),
     }),
     speaking: defineCollection({
       type: 'page',
@@ -115,17 +126,17 @@ export default defineContentConfig({
           title: z.string(),
           date: z.date(),
           location: z.string(),
-          url: z.string().optional()
-        }))
-      })
+          url: z.string().optional(),
+        })),
+      }),
     }),
     about: defineCollection({
       type: 'page',
       source: 'about.yml',
       schema: z.object({
         content: z.object({}),
-        images: z.array(createImageSchema())
-      })
-    })
-  }
+        images: z.array(createImageSchema()),
+      }),
+    }),
+  },
 })

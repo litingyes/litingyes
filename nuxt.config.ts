@@ -8,11 +8,11 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     'nuxt-og-image',
     'motion-v/nuxt',
-    '@nuxt/hints'
+    '@nuxt/hints',
   ],
 
   devtools: {
-    enabled: true
+    enabled: true,
   },
 
   css: ['~/assets/css/main.css'],
@@ -22,18 +22,15 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       routes: [
-        '/'
+        '/',
       ],
-      crawlLinks: true
-    }
+      crawlLinks: true,
+    },
   },
 
   eslint: {
     config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
-    }
-  }
+      standalone: false,
+    },
+  },
 })

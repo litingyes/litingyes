@@ -1,8 +1,6 @@
-// @ts-check
+import antfu from '@antfu/eslint-config'
 import withNuxt from './.nuxt/eslint.config.mjs'
 
-export default withNuxt({
-  rules: {
-    '@typescript-eslint/no-explicit-any': 'off'
-  }
-})
+export default withNuxt(
+  antfu(),
+)

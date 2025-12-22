@@ -1,5 +1,5 @@
 <script setup lang="ts">
-type Event = {
+interface Event {
   title: string
   date: string
   location: string
@@ -14,7 +14,7 @@ if (!page.value) {
   throw createError({
     statusCode: 404,
     statusMessage: 'Page not found',
-    fatal: true
+    fatal: true,
   })
 }
 
@@ -22,7 +22,7 @@ useSeoMeta({
   title: page.value?.seo?.title || page.value?.title,
   ogTitle: page.value?.seo?.title || page.value?.title,
   description: page.value?.seo?.description || page.value?.description,
-  ogDescription: page.value?.seo?.description || page.value?.description
+  ogDescription: page.value?.seo?.description || page.value?.description,
 })
 
 const { global } = useAppConfig()
@@ -32,10 +32,11 @@ const groupedEvents = computed((): Record<Event['category'], Event[]> => {
   const grouped: Record<Event['category'], Event[]> = {
     'Conference': [],
     'Live talk': [],
-    'Podcast': []
+    'Podcast': [],
   }
   for (const event of events) {
-    if (grouped[event.category]) grouped[event.category].push(event)
+    if (grouped[event.category])
+      grouped[event.category].push(event)
   }
   return grouped
 })
@@ -53,7 +54,7 @@ function formatDate(dateString: string): string {
       :ui="{
         title: '!mx-0 text-left',
         description: '!mx-0 text-left',
-        links: 'justify-start'
+        links: 'justify-start',
       }"
     >
       <template #links>
@@ -66,7 +67,7 @@ function formatDate(dateString: string): string {
     </UPageHero>
     <UPageSection
       :ui="{
-        container: '!pt-0'
+        container: '!pt-0',
       }"
     >
       <div
