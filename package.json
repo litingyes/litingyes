@@ -2,6 +2,7 @@
   "name": "litingyes",
   "private": true,
   "type": "module",
+  "packageManager": "pnpm@10.26.1",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -30,5 +31,4 @@
     "typescript": "^5.9.3",
     "vue-tsc": "^3.2.1"
   },
-  "packageManager": "pnpm@10.26.1"
 }
