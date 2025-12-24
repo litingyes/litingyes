@@ -1,9 +1,5 @@
-publicHoistPattern:
-  - tailwindcss
-  - '@nuxtjs/mdc'
-
+shamefullyHoist: true
 shellEmulator: true
-
 trustPolicy: no-downgrade
 ignoredBuiltDependencies:
   - '@parcel/watcher'
