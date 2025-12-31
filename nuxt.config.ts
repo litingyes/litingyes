@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     'nuxt-og-image',
     'motion-v/nuxt',
     '@nuxt/hints',
+    '@nuxtjs/mcp-toolkit',
   ],
 
   devtools: {
@@ -32,5 +33,10 @@ export default defineNuxtConfig({
     config: {
       standalone: false,
     },
+  },
+
+  mcp: {
+    name: 'litingyes',
+    version: '0.1.0',
   },
 })
